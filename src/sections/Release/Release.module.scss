@@ -1,0 +1,159 @@
+@import "../../styles/functions";
+
+$shadow: 2px 4px 16px rgb(0 0 0 / 20%);
+
+.noBorder {
+  border: 0;
+}
+
+.wrap {
+  @include screen(md) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @include screen(lg) {
+    padding-left: 14rem;
+    padding-right: 14rem;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: .5rem;
+  justify-items: center;
+
+  @include screen(sm) {
+    grid-template-columns: 6fr 5fr;
+    gap: 0;
+  }
+
+  @include screen(md) {
+    border-radius: 1rem;
+    background-color: rgb(0 0 0 / 30%);
+    box-shadow: $shadow;
+    overflow: hidden;
+  }
+
+  @include screen(xl) {
+    grid-template-columns: auto 520px;
+  }
+}
+
+.album {
+  font-size: 0;
+  display: flex;
+  position: relative;
+  width: 75%;
+  aspect-ratio: 1;
+
+  @include screen(sm) {
+    width: 100%;
+  }
+}
+
+.albumArt {
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1.5rem;
+
+  @include screen(sm) {
+    padding: .5rem 2rem;
+  }
+
+  @include screen(md) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  @include screen(xl) {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    gap: 2rem;
+  }
+}
+
+.links {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  display: grid;
+  align-content: flex-start;
+  justify-items: normal;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  row-gap: 16px;
+  width: 100%;
+
+  @include screen(xl) {
+    row-gap: 1.5rem;
+  }
+
+  &>li {
+    display: block;
+  }
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: .25rem;
+  text-align: center;
+
+  @include screen(sm) {
+    gap: .5rem;
+    text-align: left;
+  }
+
+  & p {
+    margin: 0;
+  }
+}
+
+.desc {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+
+  @include screen(lg) {
+    font-size: 2rem;
+  }
+
+  @include screen(xl) {
+    font-size: 2.5rem;
+  }
+}
+
+.date {
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: var(--grayscale-light2x);
+
+  @include screen(xl) {
+    font-size: 1.5rem;
+  }
+}
+
+.smSeparator {
+  display: none;
+
+  @include screen(sm) {
+    display: inline;
+  }
+}
+
+.xsSeparator {
+  display: block;
+
+  @include screen(sm) {
+    display: none;
+  }
+}

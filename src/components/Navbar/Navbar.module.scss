@@ -1,0 +1,99 @@
+@import "../../styles/functions";
+
+$header-height: 96px;
+$gap-mobile: 12px;
+
+.root {
+  height: var(--header-height);
+  position: relative;
+  z-index: 100;
+}
+
+.navbar {
+  background: transparent;
+  position: static;
+  width: 100%;
+  padding: 24px 16px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 300ms;
+
+  @include screen(sm) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  @include screen(md) {
+    height: $header-height;
+  }
+
+  @include screen(xl) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.navbar:global(.navbar-scroll) {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.80);
+  backdrop-filter: blur(40px);
+}
+
+.logo {
+  opacity: 1;
+  transition: opacity .25s;
+}
+
+.navbarScroll {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(40px);
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transform: translateY(0);
+  transition: transform .25s;
+
+  @include screen(md) {
+    transform: translateY(0);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+}
+
+:global(.navbar-index):not(:global(.navbar-scroll)) .container {
+  transform: translateY(calc((var(--brand-size) + $gap-mobile) * -1));
+
+  @include screen(md) {
+    transform: translateY(0);
+  }
+}
+
+:global(.navbar-index):not(:global(.navbar-scroll)) .logo {
+  opacity: 0;
+
+  @include screen(md) {
+    opacity: 1;
+  }
+}
+
+.right {
+  display: grid;
+  align-content: center;
+  grid-template-columns: repeat(2, auto);
+  justify-items: center;
+  align-items: center;
+
+  @include screen(sm) {
+    column-gap: 8px;
+  }
+}

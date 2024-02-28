@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+
+import path from 'path';
+
+const nextConfig = {
+  sassOptions: {
+    includePaths: [path.resolve('src/styles')],
+  },
+};
 
 export default nextConfig;

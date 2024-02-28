@@ -1,0 +1,69 @@
+@import "../../styles/functions";
+
+.root {
+  height: 4rem;
+  background-color: rgb(255 255 255 / 15%);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: background-color 200ms;
+  padding: .25rem;
+
+  @include screen(md) {
+    background-color: var(--grayscale-dark2x);
+    padding: 0;
+  }
+
+  @include screen(xl) {
+    height: 5rem;
+  }
+
+  &:hover {
+    background-color: var(--grayscale-dark1x);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.icon {
+  height: 100%;
+  aspect-ratio: 1;
+  font-size: 1.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .875rem;
+
+  @include screen(md) {
+    border-radius: 0;
+    font-size: 2rem;
+  }
+
+  @include screen(xl) {
+    font-size: 3rem;
+  }
+}
+
+.title {
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  flex: 1;
+
+  @include screen(sm) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1.25rem;
+  }
+}
+
+.arrow {
+  font-size: 1rem;
+  padding: 0 1rem;
+  color: var(--grayscale-light3x);
+}

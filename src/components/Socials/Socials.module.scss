@@ -1,0 +1,52 @@
+@import "../../styles/functions";
+
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.social {
+  background-color: transparent;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  border-radius: 8px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.link {
+  display: block;
+  padding: .5rem .625rem;
+  color: #fff;
+  opacity: 1;
+  font-size: 1.5rem;
+  transition: opacity 0.125s, background-color 0.125s;
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &>i {
+    height: auto;
+  }
+
+  @include screen(sm) {
+    font-size: 2rem;
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 1.75rem;
+  background-color: #fff;
+  opacity: 0.4;
+  margin-left: .5rem;
+  margin-right: .5rem;
+
+  @include screen(lg) {
+    height: 2.25rem;
+  }
+}

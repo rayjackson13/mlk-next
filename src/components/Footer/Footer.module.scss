@@ -1,0 +1,20 @@
+@import '../../styles/functions';
+
+.navbar {
+  min-height: 5rem;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--grayscale-light2x);
+  text-align: center;
+
+  @include screen (lg) {
+    position: absolute;
+  }
+}

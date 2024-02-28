@@ -1,0 +1,154 @@
+@import 'functions';
+
+@font-face {
+    font-family: 'Rubik Glitch';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Rubik Glitch'), url('../assets/fonts/RubikGlitch-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Gilroy ExtraBold'), url('../assets/fonts/gilroy.otf') format('opentype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Gilroy Light'), url('../assets/fonts/Gilroy-Light.otf') format('opentype');
+    font-display: swap;
+}
+
+:root {
+    --footer-height: 0px;
+    --header-height: 120px;
+    --brand-size: 24px;
+
+    --brand-default: #3f9ea3;
+    --grayscale-light1x: #a4a4a4;
+    --grayscale-light2x: #c1bfbd;
+    --grayscale-light3x: #eaeaea;
+    --grayscale-dark1x: #424242;
+    --grayscale-dark2x: #2e2e2e;
+    --grayscale-dark3x: #253521;
+
+    --font-brand: 'Rubik Glitch';
+    --font-secondary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-primary: Gilroy, 'sans-serif';
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    font-family: var(--font-secondary);
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+main {
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+button,
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @include screen(md) {
+        padding-left: 40px;
+        padding-right: 40px;
+        max-width: $screen-md;
+    }
+
+    @include screen(lg) {
+        padding-left: 60px;
+        padding-right: 60px;
+        max-width: $screen-lg;
+    }
+
+    @include screen(xl) {
+        padding-left: 30px;
+        padding-right: 30px;
+        max-width: $screen-xl;
+    }
+}
+
+.section {
+    overflow: hidden;
+    position: relative;
+    padding: 3rem 0 4rem;
+    border-top: 2px solid var(--grayscale-dark1x);
+
+    @include screen(lg) {
+        padding: 6rem 0 8rem;
+    }
+}
+
+.section__title {
+    margin-top: 0;
+    text-align: center;
+    color: transparent;
+    font-size: 32px;
+    margin-bottom: 2rem;
+    font-family: var(--font-primary);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #fff;
+    user-select: none;
+
+    @include screen(sm) {
+        font-size: 36px;
+    }
+
+    @include screen(md) {
+        font-size: 48px;
+    }
+
+    @include screen(lg) {
+        margin-bottom: 4rem;
+    }
+
+    @include screen(xl) {
+        font-size: 64px;
+    }
+}
+
+.brand {
+    color: #fff;
+    height: var(--brand-size);
+    text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.19);
+
+    & svg {
+        width: 100%;
+        height: 100%;
+
+        & #name {
+            color: var(--brand-default);
+        }
+    }
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}

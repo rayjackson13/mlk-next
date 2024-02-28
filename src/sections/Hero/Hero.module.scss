@@ -1,0 +1,178 @@
+@import "../../styles/functions";
+
+:root {
+  --hero-image-width: 80lvw;
+
+  @include screen(sm) {
+    --hero-image-width: 50lvh;
+  }
+
+  @include screen(xl) {
+    --hero-image-width: 60lvh;
+  }
+}
+
+@keyframes glow {
+  0% {
+    transform: scaleX(1) translateX(-105%);
+  }
+
+  30% {
+    transform: scaleX(1) translateX(0);
+  }
+
+  60% {
+    transform: scaleX(0.45) translateX(65%);
+  }
+
+  80% {
+    transform: scaleX(0.45) translateX(65%);
+  }
+
+  90% {
+    transform: scaleX(0.45) translateX(165%);
+  }
+
+  100% {
+    transform: scaleX(0.45) translateX(165%);
+  }
+}
+
+.root {
+  min-height: 100svh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(var(--header-height) * -1);
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 1rem;
+  position: relative;
+
+  @include screen(md) {
+    margin: 0 2rem;
+  }
+}
+
+.about {
+  margin: 0 auto;
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: var(--hero-image-width);
+
+  @include screen(xl) {
+    gap: 2rem;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.aboutImg {
+  pointer-events: none;
+  user-select: none;
+  display: block;
+  margin: 0;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: 2.5rem;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
+  position: relative;
+  width: var(--hero-image-width);
+}
+
+.aboutImgCopy {
+  display: none !important;
+  opacity: .1;
+  mix-blend-mode: color-dodge;
+
+  @include screen(sm) {
+    display: block !important;
+  }
+}
+
+.captionWrap {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    content: '';
+    background-color: var(--brand-default);
+    mix-blend-mode: darken;
+    box-shadow: 0 0 30px 30px var(--brand-default);
+    animation: 10s linear infinite glow;
+  }
+}
+
+.aboutCaption {
+  width: 100%;
+  color: #fff;
+}
+
+.buttonWrap {
+  position: absolute;
+  bottom: 3rem;
+  width: 48px;
+  height: 48px;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background: none;
+  transition: opacity 200ms;
+  padding: 12px;
+
+  &:hover {
+    opacity: .7;
+  }
+
+  &:active {
+    opacity: .3;
+  }
+
+  @include screen(sm) {
+    padding: 8px;
+  }
+
+  @include screen(xl) {
+    padding: 0;
+  }
+}
+
+.buttonHidden {
+  opacity: 0;
+}
+
+.arrow {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: none;
+  background-image: url('../../assets/img/arrow-down.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

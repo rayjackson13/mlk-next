@@ -1,0 +1,100 @@
+@import '../../styles/functions';
+
+.root {
+  position: relative;
+}
+
+.button {
+  background-color: transparent;
+  color: #fff;
+  outline: 0;
+  border: 0;
+  font-size: 16px;
+  transition: background-color .25s, color .25s;
+  height: 43px;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  z-index: 2;
+
+  @include screen(lg) {
+    font-size: 18px;
+    height: 50px;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.arrow {
+  transform: rotateX(0);
+  transition: transform .25s;
+  margin-left: 8px;
+
+  @include screen (sm) {
+    display: block;
+  }
+}
+
+.button.buttonOpen .arrow {
+  transform: rotateX(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  background-color: var(--grayscale-light2x);
+  min-width: 100px;
+  right: 0;
+  top: calc(100% + 8px);
+  border-radius: 8px;
+  display: grid;
+  row-gap: 4px;
+  padding: 8px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  transform: translateY(-24px);
+  opacity: 0;
+  transition: opacity .25s, transform .25s;
+  pointer-events: none;
+  z-index: 3;
+
+  &.dropdownOpen {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+    z-index: 1;
+  }
+}
+
+.option {
+  background-color: transparent;
+  outline: 0;
+  border: 0;
+  color: var(--grayscale-dark2x);
+  text-transform: uppercase;
+  display: block;
+  font-size: 16px;
+  padding: 0 16px;
+  height: 24px;
+
+  @include screen(lg) {
+    font-size: 18px;
+    height: 36px;
+  }
+
+  &:hover {
+    background-color: var(--grayscale-light1x);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

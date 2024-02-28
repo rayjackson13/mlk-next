@@ -1,0 +1,32 @@
+{
+  "streamingPlatforms": [
+    {
+      "name": "Apple Music",
+      "url": "https://music.apple.com/cz/artist/ray-7ackson/1487964868",
+      "icon": "apple"
+    },
+    {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/@ray7ackson",
+      "icon": "youtube"
+    },
+    {
+      "name": "Spotify",
+      "url": "https://open.spotify.com/artist/7rVhEJQCPnrhgXUFsctd20",
+      "icon": "spotify"
+    },
+    {
+      "name": "SoundCloud",
+      "url": "https://soundcloud.com/mellamokostya",
+      "icon": "soundcloud"
+    }
+  ],
+  "socialMedia": [
+    
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/ray7ackson",
+      "icon": "instagram"
+    }
+  ]
+}

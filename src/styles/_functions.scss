@@ -1,0 +1,24 @@
+$screen-xs: 480px;
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1440px;
+$screen-xl: 1600px;
+
+@function parse-screen-condition($c) {
+  $condMap: (
+    "xs": $screen-xs,
+    "sm": $screen-sm,
+    "md": $screen-md,
+    "lg": $screen-lg,
+    "xl": $screen-xl,
+  );
+  @return map-get($condMap, $c);
+}
+
+// usage: `include media(sm)`
+@mixin screen($breakpoint) {
+  $query: "(min-width: #{parse-screen-condition($breakpoint)})";
+  @media #{$query} {
+    @content;
+  }
+}
