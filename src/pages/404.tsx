@@ -1,9 +1,7 @@
-import { addSeconds } from 'date-fns';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { useCallback, useEffect } from 'react';
 
-import { Locales } from 'constants/locales';
 import { NotFound } from 'sections/NotFound';
 import { loadLocale } from 'utils/helpers/loadLocale';
 import { useCountdown } from 'utils/hooks/useCountdown';
@@ -17,12 +15,10 @@ type Props = {
   lang: string;
 };
 
-const initialDate = new Date();
-
 export default function NotFoundPage(): JSX.Element {
   const locale = useLocale();
   const router = useRouter();
-  const countdown = useCountdown(addSeconds(initialDate, 10));
+  const countdown = useCountdown();
 
   const redirect = useCallback(() => {
     router.push(`/${locale}/`);
@@ -36,16 +32,6 @@ export default function NotFoundPage(): JSX.Element {
 
   return <NotFound countdown={countdown} />;
 }
-
-// export const getStaticPaths: GetStaticPaths = () => {
-//   const paths = Locales.map((lang) => ({
-//     params: {
-//       lang: lang.locale,
-//     },
-//   }));
-
-//   return { paths, fallback: false };
-// };
 
 export const getStaticProps: GetStaticProps<Props, Params> = ({ locale }) => {
   const lang = locale ?? 'en';

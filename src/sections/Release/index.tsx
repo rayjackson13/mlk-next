@@ -45,6 +45,7 @@ export const Release = forwardRef<HTMLElement, Props>(
                     alt="image"
                     className={styles.albumArt}
                     height={500}
+                    priority
                     sizes="(max-width: 767px) 220px, (max-width: 1399px) 440px, 880px"
                     src={album.art}
                     width={500}

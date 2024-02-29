@@ -1,17 +1,20 @@
-import { useEffect, useState } from 'react';
+import { addSeconds } from 'date-fns';
+import { useEffect, useRef, useState } from 'react';
 
-export const useCountdown = (targetDate: Date): number => {
-  const targetTime = targetDate.getTime();
+export const useCountdown = (): number => {
+  const targetDate = useRef(addSeconds(new Date(), 10)).current;
 
-  const [countdown, setCountdown] = useState(targetTime - new Date().getTime());
+  const [countdown, setCountdown] = useState(
+    targetDate.getTime() - new Date().getTime(),
+  );
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCountdown(targetTime - new Date().getTime());
+      setCountdown(targetDate.getTime() - new Date().getTime());
     }, 1000);
 
     return (): void => clearInterval(interval);
-  }, [countdown, targetTime]);
+  }, [countdown, targetDate]);
 
   return countdown;
 };
