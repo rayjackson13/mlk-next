@@ -20,6 +20,9 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.resolve('src/styles')],
   },
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;

@@ -11,7 +11,6 @@ import React, {
 import styles from './Hero.module.scss';
 
 import Arrow from 'assets/img/arrow-down.svg';
-import HeroImage from 'assets/img/me.jpeg';
 import Logo from 'assets/svg/logo.svg';
 
 type Props = {
@@ -62,7 +61,7 @@ export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
               height={700}
               placeholder="blur"
               priority
-              src={HeroImage}
+              src="/images/me.jpeg"
               width={700}
             />
             <Image
@@ -71,7 +70,7 @@ export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
               height={700}
               placeholder="blur"
               priority
-              src={HeroImage}
+              src="/images/me.jpeg"
               width={700}
             />
             <Image
@@ -80,7 +79,7 @@ export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
               height={700}
               placeholder="blur"
               priority
-              src={HeroImage}
+              src="/images/me.jpeg"
               width={700}
             />
           </div>

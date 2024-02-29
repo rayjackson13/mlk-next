@@ -3,8 +3,6 @@ import React from 'react';
 
 import styles from './Background.module.scss';
 
-import backgroundImage from 'assets/img/me.jpeg';
-
 export const Background = (): JSX.Element => (
   <div className={styles.bg}>
     <Image
@@ -12,7 +10,7 @@ export const Background = (): JSX.Element => (
       className={styles.img}
       height={1000}
       sizes="(max-height: 767px) 100vw, 1000px"
-      src={backgroundImage}
+      src="/images/me.jpeg"
       width={1000}
     />
     <div className={styles.gradient} />
