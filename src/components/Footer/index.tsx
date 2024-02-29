@@ -34,7 +34,7 @@ export const Footer = (): JSX.Element => {
     <aside ref={ref}>
       <div className={styles.navbar}>
         <p className={styles.copy}>
-          © K mellamokostya 2015—{new Date().getFullYear()}.{' '}
+          © mellamokostya 2015—{new Date().getFullYear()}.{' '}
           <span dangerouslySetInnerHTML={{ __html: getRightsLine() }} />.
         </p>
       </div>
