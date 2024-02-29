@@ -12,6 +12,11 @@ const nextConfig = {
 
     return config;
   },
+  i18n: {
+    locales: ['default', 'en', 'ru'],
+    defaultLocale: 'default',
+    localeDetection: false,
+  },
   sassOptions: {
     includePaths: [path.resolve('src/styles')],
   },

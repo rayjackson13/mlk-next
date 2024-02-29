@@ -1,7 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Head from 'next/head';
 
-import { Locales } from 'constants/locales';
 import { Release } from 'sections/Release';
 import { Album } from 'types';
 import { getTranslation } from 'utils/helpers/getTranslation';
@@ -9,12 +8,10 @@ import { loadAllReleases } from 'utils/helpers/loadAllReleases';
 import { loadLocale } from 'utils/helpers/loadLocale';
 
 type Params = {
-  lang: string;
   slug: string;
 };
 
 type Props = {
-  lang: string;
   release: Album | undefined;
 };
 
@@ -41,32 +38,37 @@ const ReleasePage = ({ release }: Props): JSX.Element => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = () => {
+export const getStaticPaths: GetStaticPaths = ({ locales = ['en', 'ru'] }) => {
   const releases = loadAllReleases();
 
   // Get the paths we want to pre-render based on posts
-  const paths = Locales.map((lang) =>
-    releases.map((post) => ({
-      params: {
-        lang: lang.locale,
-        slug: post.slug,
-      },
-    })),
-  ).flat();
+  const paths = locales
+    .map((lang) =>
+      releases.map((post) => ({
+        params: {
+          slug: post.slug,
+        },
+        locale: lang,
+      })),
+    )
+    .flat();
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 };
 
-export const getStaticProps: GetStaticProps<Props, Params> = ({ params }) => {
-  const lang = params?.lang ?? 'en';
+export const getStaticProps: GetStaticProps<Props, Params> = ({
+  locale,
+  params,
+}) => {
+  const lang = locale ?? 'en';
   const releases = loadAllReleases();
   const translations = loadLocale(lang);
 
-  if (!params) return { props: { lang: 'en', release: undefined } };
+  if (!params) return { props: { lang, release: undefined, translations } };
 
   return {
     props: {
-      lang: params.lang,
+      lang,
       release: releases.find((val) => val.slug === params.slug),
       translations,
     },

@@ -47,7 +47,7 @@ export const LanguageSelect = (): JSX.Element => {
 
       const { origin, href } = window.location;
       const url = href.replace(origin, '').replace(currentLocale, locale);
-      router.push(url);
+      router.push(url, url, { locale });
     },
     [currentLocale, router],
   );

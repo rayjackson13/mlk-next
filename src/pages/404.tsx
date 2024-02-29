@@ -37,25 +37,23 @@ export default function NotFoundPage(): JSX.Element {
   return <NotFound countdown={countdown} />;
 }
 
-export const getStaticPaths: GetStaticPaths = () => {
-  const paths = Locales.map((lang) => ({
-    params: {
-      lang: lang.locale,
-    },
-  }));
+// export const getStaticPaths: GetStaticPaths = () => {
+//   const paths = Locales.map((lang) => ({
+//     params: {
+//       lang: lang.locale,
+//     },
+//   }));
 
-  return { paths, fallback: false };
-};
+//   return { paths, fallback: false };
+// };
 
-export const getStaticProps: GetStaticProps<Props, Params> = (rest) => {
-  const { params } = rest;
-  console.log(rest);
-  const lang = params?.lang ?? 'en';
+export const getStaticProps: GetStaticProps<Props, Params> = ({ locale }) => {
+  const lang = locale ?? 'en';
   const translations = loadLocale(lang);
 
   return {
     props: {
-      lang: params?.lang ?? 'en',
+      lang: lang,
       translations,
     },
   };

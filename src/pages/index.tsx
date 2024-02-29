@@ -11,12 +11,7 @@ import { getTranslation } from 'utils/helpers/getTranslation';
 import { loadAllReleases } from 'utils/helpers/loadAllReleases';
 import { loadLocale } from 'utils/helpers/loadLocale';
 
-type Params = {
-  lang: string;
-};
-
 type Props = {
-  lang: string;
   releases: Album[];
 };
 
@@ -44,24 +39,14 @@ const Home = ({ releases }: Props): JSX.Element => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = () => {
-  const paths = Locales.map((lang) => ({
-    params: {
-      lang: lang.locale,
-    },
-  }));
-
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps<Props, Params> = ({ params }) => {
-  const lang = params?.lang ?? 'en';
+export const getStaticProps: GetStaticProps<Props> = ({ locale }) => {
+  const lang = locale ?? 'en';
   const releases = loadAllReleases();
   const translations = loadLocale(lang);
 
   return {
     props: {
-      lang: params?.lang ?? 'en',
+      lang,
       releases,
       translations,
     },
