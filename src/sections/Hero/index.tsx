@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import Image from 'next/image';
 import React, {
   RefObject,
   useCallback,
@@ -12,6 +11,7 @@ import styles from './Hero.module.scss';
 
 import Arrow from 'assets/img/arrow-down.svg';
 import Logo from 'assets/svg/logo.svg';
+import { Image } from 'components/Image';
 
 type Props = {
   nextSectionRef: RefObject<HTMLElement>;
@@ -58,26 +58,17 @@ export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
             <Image
               alt="Ray 7ackson | Kostya"
               className={clsx(styles.aboutImg, styles.aboutImgCopy)}
-              height={700}
-              priority
               src="/images/me.jpg"
-              width={700}
             />
             <Image
               alt="Ray 7ackson | Kostya"
               className={styles.aboutImg}
-              height={700}
-              priority
               src="/images/me.jpg"
-              width={700}
             />
             <Image
               alt="Ray 7ackson | Kostya"
               className={clsx(styles.aboutImg, styles.aboutImgCopy)}
-              height={700}
-              priority
               src="/images/me.jpg"
-              width={700}
             />
           </div>
 

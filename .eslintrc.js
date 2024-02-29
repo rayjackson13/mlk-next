@@ -129,7 +129,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ['*.js'],
+      files: ['*.js', '*.mjs', '*.cjs'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',

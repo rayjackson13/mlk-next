@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from 'next/image';
 import React from 'react';
 
 import styles from './ReleaseList.module.scss';
 
+import { Image } from 'components/Image';
 import { Link } from 'components/Link';
 import { Album } from 'types';
 import { getTranslation } from 'utils/helpers/getTranslation';
@@ -30,10 +30,8 @@ export const ReleaseList = ({ albums }: Props): JSX.Element => (
             {album.art && (
               <Image
                 alt="image"
-                height={300}
-                sizes="(max-width: 425px) 180px, 320px"
+                sizes="(max-width: 570px) 250px, 400px"
                 src={album.art}
-                width={300}
               />
             )}
 

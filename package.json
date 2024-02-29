@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn optimize && next build",
     "start": "next dev",
     "serve": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimize": "node scripts/optimiseImages.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.5.1",
@@ -52,6 +53,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "prettier": "^3.2.5",
     "sass": "^1.71.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }

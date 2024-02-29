@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import Image from 'next/image';
 import React, { forwardRef, useCallback } from 'react';
 
 import styles from './Release.module.scss';
 
+import { Image } from 'components/Image';
 import { StreamLink } from 'components/StreamLink';
 import { Album } from 'types';
 import { getTranslation } from 'utils/helpers/getTranslation';
@@ -44,11 +44,8 @@ export const Release = forwardRef<HTMLElement, Props>(
                   <Image
                     alt="image"
                     className={styles.albumArt}
-                    height={500}
-                    priority
-                    sizes="(max-width: 767px) 220px, (max-width: 1399px) 440px, 880px"
+                    sizes="(max-width: 767px) 250px, (max-width: 1399px) 400px, 700px"
                     src={album.art}
-                    width={500}
                   />
                 )}
               </div>

@@ -21,7 +21,7 @@ const nextConfig = {
     includePaths: [path.resolve('src/styles')],
   },
   images: {
-    // unoptimized: true,
+    unoptimized: true,
   },
 };
 
