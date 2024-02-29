@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import 'styles/style.scss';
+import '@fortawesome/fontawesome-free/js/all';
 
 type Props = {
   children: ReactNode;

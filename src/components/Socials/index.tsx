@@ -6,6 +6,7 @@ import { getIcon } from './helpers/getIcon';
 import socialInfo from './social.json';
 
 import { LanguageSelect } from 'components/LanguageSelect';
+import { Analytics, Events } from 'utils/analytics';
 // import { Analytics, Events } from 'utils/analytics';
 
 type MediaLink = {
@@ -20,11 +21,11 @@ type ItemProps = {
 
 const SocialItem = ({ link }: ItemProps): JSX.Element => {
   const onClick = useCallback((): void => {
-    // Analytics.track(Events.SocialClicked, {
-    //   type: link.name,
-    //   url: link.url,
-    // });
-  }, []);
+    Analytics.track(Events.SocialClicked, {
+      type: link.name,
+      url: link.url,
+    });
+  }, [link.name, link.url]);
 
   return (
     <li>
