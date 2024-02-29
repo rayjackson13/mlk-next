@@ -1,15 +1,17 @@
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import React from 'react';
 
-import * as styles from './Background.module.scss';
+import styles from './Background.module.scss';
+
+import backgroundImage from 'assets/img/me.jpeg';
 
 export const Background = (): JSX.Element => (
   <div className={styles.bg}>
-    <StaticImage
+    <Image
       alt=""
       className={styles.img}
       height={1000}
-      src="../../assets/img/me.jpeg"
+      src={backgroundImage}
       width={1000}
     />
     <div className={styles.gradient} />

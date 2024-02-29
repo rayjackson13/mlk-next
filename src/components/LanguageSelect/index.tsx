@@ -1,10 +1,10 @@
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
-import { navigate } from 'gatsby';
+import { useRouter } from 'next/router';
 import React, { useCallback, useMemo, useState } from 'react';
 
-import * as styles from './LanguageSelect.module.scss';
+import styles from './LanguageSelect.module.scss';
 
 import { Lang, Locales } from 'constants/locales';
 import { useLocale } from 'utils/hooks/useLocale';
@@ -26,6 +26,7 @@ const Option = ({ locale, onSelect, preview }: Props): JSX.Element => {
 };
 
 export const LanguageSelect = (): JSX.Element => {
+  const router = useRouter();
   const [isOpen, setOpen] = useState(false);
   const currentLocale = useLocale();
 
@@ -46,9 +47,9 @@ export const LanguageSelect = (): JSX.Element => {
 
       const { origin, href } = window.location;
       const url = href.replace(origin, '').replace(currentLocale, locale);
-      navigate(url);
+      router.push(url);
     },
-    [currentLocale],
+    [currentLocale, router],
   );
 
   const onSelect = useCallback(

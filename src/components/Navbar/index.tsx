@@ -1,10 +1,10 @@
 import clsx from 'clsx';
+import Link from 'next/link';
 import React, { useEffect, useRef } from 'react';
 
-import * as styles from './Navbar.module.scss';
+import styles from './Navbar.module.scss';
 
 import Logo from 'assets/svg/logo.svg';
-import { Link } from 'components/Link';
 import { Socials } from 'components/Socials';
 
 type Props = {
@@ -63,7 +63,7 @@ export const Navbar = ({ isIndexPage = false }: Props): JSX.Element => {
           <Link
             aria-label="Go to homepage"
             className={clsx('brand', styles.logo)}
-            to="/"
+            href="/"
           >
             <Logo />
           </Link>

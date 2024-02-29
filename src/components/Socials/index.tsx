@@ -1,12 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useCallback } from 'react';
 
-import * as styles from './Socials.module.scss';
+import styles from './Socials.module.scss';
 import { getIcon } from './helpers/getIcon';
 import socialInfo from './social.json';
 
 import { LanguageSelect } from 'components/LanguageSelect';
-import { Analytics, Events } from 'utils/analytics';
+// import { Analytics, Events } from 'utils/analytics';
 
 type MediaLink = {
   icon: string;
@@ -20,11 +20,11 @@ type ItemProps = {
 
 const SocialItem = ({ link }: ItemProps): JSX.Element => {
   const onClick = useCallback((): void => {
-    Analytics.track(Events.SocialClicked, {
-      type: link.name,
-      url: link.url,
-    });
-  }, [link]);
+    // Analytics.track(Events.SocialClicked, {
+    //   type: link.name,
+    //   url: link.url,
+    // });
+  }, []);
 
   return (
     <li>

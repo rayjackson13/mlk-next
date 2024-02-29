@@ -1,8 +1,8 @@
 import 'styles/style.scss';
 
-import * as Vercel from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/react';
-import React, { useEffect } from 'react';
+// import * as Vercel from '@vercel/analytics/react';
+// import { SpeedInsights } from '@vercel/speed-insights/react';
+import React, { useEffect, useLayoutEffect } from 'react';
 
 import { getLocale } from './helpers/getLocale';
 
@@ -10,58 +10,48 @@ import { Background } from 'components/Background';
 import { Footer } from 'components/Footer';
 import { Navbar } from 'components/Navbar';
 import { LocaleContext } from 'context/locale';
-import { LocalizedPageProps } from 'types';
-import { Analytics, Events } from 'utils/analytics';
+// import { Analytics, Events } from 'utils/analytics';
+import { Translations } from 'types';
 import { isIndexPage } from 'utils/helpers/isIndexPage';
-import { useTranslationLoader } from 'utils/hooks/useTranslationLoader';
 
-type LayoutProps = Omit<LocalizedPageProps, 'children'> & {
+type LayoutProps = {
   children: React.ReactElement;
-};
-
-type LocalizedLayoutProps = {
-  children: React.ReactElement;
-};
-
-Analytics.init();
-
-const LocalizedLayout = ({ children }: LocalizedLayoutProps): JSX.Element => {
-  useTranslationLoader();
-
-  return <>{children}</>;
+  locale: string;
+  path: string;
+  translations: Translations;
 };
 
 export const Layout = ({
   children,
-  pageContext: { locale },
-  location: { href, pathname },
+  locale,
+  path,
+  translations,
 }: LayoutProps): React.ReactElement => {
-  const isIndex = isIndexPage(pathname);
-  const lang = getLocale(locale, pathname);
-  console.log('aaaa', process.env.GATSBY_MIXPANEL_TOKEN);
+  global.translations = translations;
+  const isIndex = isIndexPage(path);
+  const lang = getLocale(locale, path);
+  // console.log('aaaa', process.env.GATSBY_MIXPANEL_TOKEN);
 
-  useEffect(() => {
-    Analytics.track(Events.PageVisited, {
-      url: href,
-      language: lang,
-    });
-  }, [lang, href]);
+  // useEffect(() => {
+  //   Analytics.track(Events.PageVisited, {
+  //     url: href,
+  //     language: lang,
+  //   });
+  // }, [lang, href]);
 
   return (
     <>
       <LocaleContext.Provider value={lang}>
-        <LocalizedLayout>
-          <>
-            <Navbar isIndexPage={isIndex} />
-            <Background />
-            <main>{children}</main>
-            <Footer />
-          </>
-        </LocalizedLayout>
+        <>
+          <Navbar isIndexPage={isIndex} />
+          <Background />
+          <main>{children}</main>
+          <Footer />
+        </>
       </LocaleContext.Provider>
 
-      <Vercel.Analytics />
-      <SpeedInsights />
+      {/* <Vercel.Analytics />
+      <SpeedInsights /> */}
     </>
   );
 };

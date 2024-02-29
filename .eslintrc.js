@@ -23,11 +23,13 @@ module.exports = {
   globals: {
     React: 'readonly',
     JSX: 'readonly',
+    webpack: 'readonly',
     __PATH_PREFIX__: true,
   },
   ignorePatterns: [
     '.eslintrc.js',
-    'public'
+    'public',
+    '.next'
   ],
   plugins: ['@typescript-eslint', 'import', 'react', 'jest', 'prettier', 'react-hooks'],
   parser: '@typescript-eslint/parser',
@@ -157,6 +159,12 @@ module.exports = {
       files: ['src/pages/**/*.tsx', 'src/pages/**/*.ts'],
       rules: {
         'import/no-default-export': 'off'
+      }
+    },
+    {
+      files: ['next.config.mjs'],
+      rules: {
+        '@typescript-eslint/explicit-function-return-type': 'off'
       }
     }
   ],

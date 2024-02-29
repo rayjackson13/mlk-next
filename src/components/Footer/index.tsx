@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-import * as styles from './Footer.module.scss';
+import styles from './Footer.module.scss';
 
 import { getTranslation } from 'utils/helpers/getTranslation';
 
