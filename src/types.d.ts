@@ -1,5 +1,4 @@
 /* eslint-disable no-var */
-import { PageProps } from 'gatsby';
 
 export type StreamingLink = {
   service: 'apple' | 'spotify' | 'youtube' | 'deezer' | 'soundcloud';
@@ -27,8 +26,6 @@ export type ReleasesQueryResult = {
     }[];
   };
 };
-
-export type LocalizedPageProps = PageProps<unknown, { locale: string }>;
 
 export type Translations = { [id: string]: string };
 

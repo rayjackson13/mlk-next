@@ -18,7 +18,7 @@ type Props = {
   release: Album | undefined;
 };
 
-const ReleasePage = ({ lang, release }: Props): JSX.Element => {
+const ReleasePage = ({ release }: Props): JSX.Element => {
   const pageTitle = `${release?.title} | MELLAMOKOSTYA`;
   const pageDesc = getTranslation('releasePageDesc').replace(
     '#',
@@ -28,7 +28,6 @@ const ReleasePage = ({ lang, release }: Props): JSX.Element => {
   return (
     <>
       <Head>
-        <html lang={lang} />
         <title>{pageTitle}</title>
         <meta content={pageTitle} name="og:title" />
         <meta content={pageDesc} name="description" />

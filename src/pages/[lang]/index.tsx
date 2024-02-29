@@ -20,7 +20,7 @@ type Props = {
   releases: Album[];
 };
 
-const Home = ({ lang, releases }: Props): JSX.Element => {
+const Home = ({ releases }: Props): JSX.Element => {
   const sectionRef = useRef<HTMLElement>(null);
   const latestAlbum = useMemo(() => releases[0], [releases]);
   const title = getTranslation('title');
@@ -29,7 +29,6 @@ const Home = ({ lang, releases }: Props): JSX.Element => {
   return (
     <>
       <Head>
-        <html lang={lang} />
         <title>{title}</title>
         <meta content={description} name="description" />
         <meta content={description} name="og:description" />
