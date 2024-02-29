@@ -91,7 +91,7 @@ module.exports = {
     'react/boolean-prop-naming': ['error', { rule: '^(is|has|can)[A-Z]([A-Za-z0-9]?)+' }],
     'react/button-has-type': ['error', { reset: false }],
     'react/function-component-definition': [
-      'error',
+      'off',
       {
         namedComponents: 'arrow-function',
         unnamedComponents: 'arrow-function',

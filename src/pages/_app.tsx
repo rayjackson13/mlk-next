@@ -1,3 +1,6 @@
+import 'styles/style.scss';
+import '@fortawesome/fontawesome-free/js/all';
+
 import { AppProps } from 'next/app';
 
 import { Layout } from 'components/Layout';

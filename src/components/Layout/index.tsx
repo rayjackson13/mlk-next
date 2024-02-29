@@ -1,9 +1,5 @@
-import 'styles/style.scss';
-
 // import * as Vercel from '@vercel/analytics/react';
 // import { SpeedInsights } from '@vercel/speed-insights/react';
-import React, { useEffect, useLayoutEffect } from 'react';
-
 import { getLocale } from './helpers/getLocale';
 
 import { Background } from 'components/Background';
@@ -12,7 +8,6 @@ import { Navbar } from 'components/Navbar';
 import { LocaleContext } from 'context/locale';
 // import { Analytics, Events } from 'utils/analytics';
 import { Translations } from 'types';
-import { isIndexPage } from 'utils/helpers/isIndexPage';
 
 type LayoutProps = {
   children: React.ReactElement;
@@ -28,9 +23,7 @@ export const Layout = ({
   translations,
 }: LayoutProps): React.ReactElement => {
   global.translations = translations;
-  const isIndex = isIndexPage(path);
   const lang = getLocale(locale, path);
-  // console.log('aaaa', process.env.GATSBY_MIXPANEL_TOKEN);
 
   // useEffect(() => {
   //   Analytics.track(Events.PageVisited, {
@@ -43,7 +36,7 @@ export const Layout = ({
     <>
       <LocaleContext.Provider value={lang}>
         <>
-          <Navbar isIndexPage={isIndex} />
+          <Navbar locale={locale} path={path} />
           <Background />
           <main>{children}</main>
           <Footer />

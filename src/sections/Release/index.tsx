@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React, { forwardRef, useCallback } from 'react';
 
-import * as styles from './Release.module.scss';
+import styles from './Release.module.scss';
 
 import { StreamLink } from 'components/StreamLink';
 import { Album } from 'types';
@@ -16,7 +16,6 @@ type Props = {
 
 export const Release = forwardRef<HTMLElement, Props>(
   ({ album, hasBorder = true }, ref): JSX.Element | null => {
-    console.log(album);
     const title = getTranslation('newRelease');
     // const image = getImage(album.imageLarge);
     const type = getTranslation(album.type);
@@ -46,6 +45,7 @@ export const Release = forwardRef<HTMLElement, Props>(
                     alt="image"
                     className={styles.albumArt}
                     height={500}
+                    sizes="(max-width: 767px) 220px, (max-width: 1399px) 440px, 880px"
                     src={album.art}
                     width={500}
                   />

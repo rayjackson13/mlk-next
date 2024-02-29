@@ -28,7 +28,13 @@ export const ReleaseList = ({ albums }: Props): JSX.Element => (
         >
           <div className={styles.imageWrap}>
             {album.art && (
-              <Image alt="image" height={300} src={album.art} width={300} />
+              <Image
+                alt="image"
+                height={300}
+                sizes="(max-width: 425px) 180px, 320px"
+                src={album.art}
+                width={300}
+              />
             )}
 
             <div className={styles.iconHolder}>

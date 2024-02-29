@@ -59,6 +59,8 @@ export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
             <Image
               alt="Ray 7ackson | Kostya"
               className={clsx(styles.aboutImg, styles.aboutImgCopy)}
+              height={700}
+              placeholder="blur"
               priority
               src={HeroImage}
               width={700}
@@ -66,6 +68,8 @@ export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
             <Image
               alt="Ray 7ackson | Kostya"
               className={styles.aboutImg}
+              height={700}
+              placeholder="blur"
               priority
               src={HeroImage}
               width={700}
@@ -73,6 +77,8 @@ export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
             <Image
               alt="Ray 7ackson | Kostya"
               className={clsx(styles.aboutImg, styles.aboutImgCopy)}
+              height={700}
+              placeholder="blur"
               priority
               src={HeroImage}
               width={700}

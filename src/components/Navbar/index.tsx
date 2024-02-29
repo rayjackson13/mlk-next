@@ -6,13 +6,16 @@ import styles from './Navbar.module.scss';
 
 import Logo from 'assets/svg/logo.svg';
 import { Socials } from 'components/Socials';
+import { isIndexPage } from 'utils/helpers/isIndexPage';
 
 type Props = {
-  isIndexPage?: boolean;
+  locale: string;
+  path: string;
 };
 
-export const Navbar = ({ isIndexPage = false }: Props): JSX.Element => {
+export const Navbar = ({ locale, path }: Props): JSX.Element => {
   const ref = useRef<HTMLElement>(null);
+  const isIndex = isIndexPage(path);
 
   const handleScroll = (): void => {
     if (window.scrollY > 0) {
@@ -56,14 +59,14 @@ export const Navbar = ({ isIndexPage = false }: Props): JSX.Element => {
   return (
     <header className={styles.root}>
       <nav
-        className={clsx('navbar', styles.navbar, isIndexPage && 'navbar-index')}
+        className={clsx('navbar', styles.navbar, isIndex && 'navbar-index')}
         ref={ref}
       >
         <div className={styles.container}>
           <Link
             aria-label="Go to homepage"
             className={clsx('brand', styles.logo)}
-            href="/"
+            href={`/${locale}/`}
           >
             <Logo />
           </Link>
