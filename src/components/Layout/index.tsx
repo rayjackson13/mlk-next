@@ -1,5 +1,5 @@
-// import * as Vercel from '@vercel/analytics/react';
-// import { SpeedInsights } from '@vercel/speed-insights/react';
+import '@fortawesome/fontawesome-free/js/all';
+
 import { useEffect } from 'react';
 
 import { getLocale } from './helpers/getLocale';
@@ -8,7 +8,6 @@ import { Background } from 'components/Background';
 import { Footer } from 'components/Footer';
 import { Navbar } from 'components/Navbar';
 import { LocaleContext } from 'context/locale';
-// import { Analytics, Events } from 'utils/analytics';
 import { Translations } from 'types';
 import { Analytics, Events } from 'utils/analytics';
 
