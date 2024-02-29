@@ -59,27 +59,24 @@ export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
               alt="Ray 7ackson | Kostya"
               className={clsx(styles.aboutImg, styles.aboutImgCopy)}
               height={700}
-              placeholder="blur"
               priority
-              src="/images/me.jpeg"
+              src="/images/me.jpg"
               width={700}
             />
             <Image
               alt="Ray 7ackson | Kostya"
               className={styles.aboutImg}
               height={700}
-              placeholder="blur"
               priority
-              src="/images/me.jpeg"
+              src="/images/me.jpg"
               width={700}
             />
             <Image
               alt="Ray 7ackson | Kostya"
               className={clsx(styles.aboutImg, styles.aboutImgCopy)}
               height={700}
-              placeholder="blur"
               priority
-              src="/images/me.jpeg"
+              src="/images/me.jpg"
               width={700}
             />
           </div>
