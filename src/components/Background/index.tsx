@@ -11,6 +11,7 @@ export const Background = (): JSX.Element => (
       alt=""
       className={styles.img}
       height={1000}
+      sizes="(max-height: 767px) 100vw, 1000px"
       src={backgroundImage}
       width={1000}
     />

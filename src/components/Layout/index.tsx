@@ -1,5 +1,4 @@
-import '@fortawesome/fontawesome-free/js/all';
-
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { useEffect } from 'react';
 
 import { getLocale } from './helpers/getLocale';
@@ -47,8 +46,7 @@ export const Layout = ({
         </>
       </LocaleContext.Provider>
 
-      {/* <Vercel.Analytics />
-      <SpeedInsights /> */}
+      <SpeedInsights />
     </>
   );
 };
