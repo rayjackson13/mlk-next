@@ -2,6 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useMemo, useRef } from 'react';
 
 import { Locales } from 'constants/locales';
+import { Discography } from 'sections/Discography';
 import { Hero } from 'sections/Hero';
 import { Release } from 'sections/Release';
 import { Album } from 'types';
@@ -25,7 +26,7 @@ const Home = ({ releases }: Props): JSX.Element => {
     <>
       <Hero nextSectionRef={sectionRef} />
       <Release album={latestAlbum} ref={sectionRef} />
-      {/* <Discography albums={releases} /> */}
+      <Discography albums={releases} />
     </>
   );
 };

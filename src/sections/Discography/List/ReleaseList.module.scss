@@ -2,21 +2,6 @@
 
 $gray: rgba(105, 105, 105, 0.3);
 
-:root {
-  --discovery-columns: 2;
-  --discovery-gap: 1rem;
-
-  @include screen(sm) {
-    --discovery-columns: 3;
-    --discovery-gap: 2rem;
-  }
-
-  @include screen(lg) {
-    --discovery-columns: 4;
-    --discovery-gap: 4rem;
-  }
-}
-
 @mixin item-width() {
   $cols: var(--discovery-columns);
   $gap: var(--discovery-gap);
@@ -76,7 +61,7 @@ $gray: rgba(105, 105, 105, 0.3);
     margin-bottom: 1rem;
   }
 
-  & :global(.gatsby-image-wrapper) {
+  & img {
     width: 100%;
     height: 100%;
     object-fit: cover;

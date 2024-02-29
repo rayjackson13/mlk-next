@@ -42,9 +42,20 @@
     --font-primary: Gilroy, 'sans-serif';
 
     --hero-image-width: 80lvw;
+    --discovery-columns: 2;
+    --discovery-gap: 1rem;
+
     @include screen(sm) {
         --hero-image-width: 50lvh;
+        --discovery-columns: 3;
+        --discovery-gap: 2rem;
     }
+
+    @include screen(lg) {
+      --discovery-columns: 4;
+      --discovery-gap: 4rem;
+    }
+
     @include screen(xl) {
         --hero-image-width: 60lvh;
     }
