@@ -14,5 +14,5 @@ export const loadAllReleases = (): Album[] => {
       return matter(contents).data as Album;
     })
     .filter((album) => !album.hidden)
-    .toSorted((a, b) => (b.date > a.date ? 1 : -1));
+    .sort((a, b) => (b.date > a.date ? 1 : -1));
 };
