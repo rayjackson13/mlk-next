@@ -160,9 +160,5 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: none;
-  background-image: url('../../assets/img/arrow-down.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  color: var(--grayscale-light2x);
 }

@@ -19,7 +19,6 @@ export const Footer = (): JSX.Element => {
   useEffect(() => {
     if (!ref.current) return;
 
-    /* eslint-disable-next-line compat/compat */
     const resizeObserver = new ResizeObserver(setFooterHeight);
     resizeObserver.observe(ref.current);
 

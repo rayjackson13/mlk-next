@@ -1,8 +1,7 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import { useMemo, useRef } from 'react';
 
-import { Locales } from 'constants/locales';
 import { Discography } from 'sections/Discography';
 import { Hero } from 'sections/Hero';
 import { Release } from 'sections/Release';
@@ -39,7 +38,7 @@ const Home = ({ releases }: Props): JSX.Element => {
   );
 };
 
-export const getStaticProps: GetStaticProps<Props> = ({ locale }) => {
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => {
   const lang = locale ?? 'en';
   const releases = loadAllReleases();
   const translations = loadLocale(lang);

@@ -10,7 +10,7 @@ export const loadLocale = (locale: string): Translations => {
     return {};
   }
 
-  const file = path.resolve('src/data/locales', `${locale}.md`);
+  const file = path.resolve(process.cwd(), 'src/data/locales', `${locale}.md`);
   const contents = fs.readFileSync(file, 'utf-8');
   return matter(contents).data;
 };

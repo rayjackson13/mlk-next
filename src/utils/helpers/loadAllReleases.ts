@@ -6,7 +6,7 @@ import matter from 'gray-matter';
 import { Album } from 'types';
 
 export const loadAllReleases = (): Album[] => {
-  const directory = path.resolve('src/data/releases');
+  const directory = path.resolve(process.cwd(), 'src/data/releases');
   const files = fs.readdirSync(directory);
   return files
     .map((file) => {
