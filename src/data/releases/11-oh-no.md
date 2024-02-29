@@ -2,7 +2,7 @@
 slug: "oh-no"
 date: "2023-07-01"
 title: "Oh No"
-art: ../../assets/img/music/oh-no.png
+art: /images/music/oh-no.png
 type: "single"
 links:
   - { service: "apple", url: "https://music.apple.com/us/album/oh-no-single/1700303529" }

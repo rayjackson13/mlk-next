@@ -5,7 +5,7 @@ import React, { useCallback } from 'react';
 import * as styles from './StreamLink.module.scss';
 
 import { StreamingServices } from 'constants/streamServices';
-import { Analytics, Events } from 'utils/analytics';
+// import { Analytics, Events } from 'utils/analytics';
 
 type Variant = 'apple' | 'spotify' | 'youtube' | 'soundcloud' | 'deezer';
 
@@ -23,12 +23,12 @@ export const StreamLink = ({
   const { backgroundColor, color, name, icon } = StreamingServices[variant];
 
   const onClick = useCallback(() => {
-    Analytics.track(Events.StreamClicked, {
-      songName: releaseName,
-      type: name,
-      url: href,
-    });
-  }, [href, name, releaseName]);
+    // Analytics.track(Events.StreamClicked, {
+    //   songName: releaseName,
+    //   type: name,
+    //   url: href,
+    // });
+  }, []);
 
   return (
     <a

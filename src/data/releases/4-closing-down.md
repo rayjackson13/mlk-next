@@ -2,7 +2,7 @@
 slug: "closing-down"
 date: "2021-11-11"
 title: "Closing Down"
-art: ../../assets/img/music/closing-down.png
+art: /images/music/closing-down.png
 type: "single"
 links:
   - { service: "apple", url: "https://music.apple.com/us/album/closing-down-single/1697151702" }

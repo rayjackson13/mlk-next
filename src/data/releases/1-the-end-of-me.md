@@ -2,7 +2,7 @@
 slug: "the-end-of-me"
 date: "2020-06-09"
 title: "The End Of Me"
-art: ../../assets/img/music/the-end-of-me.png
+art: /images/music/the-end-of-me.png
 type: "single"
 links:
   - { service: "apple", url: "https://music.apple.com/us/album/the-end-of-me-single/1697174801" }

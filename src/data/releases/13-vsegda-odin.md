@@ -2,7 +2,7 @@
 slug: "vsegda-odin"
 date: "2023-09-01"
 title: "Всегда Один"
-art: ../../assets/img/music/vsegda-odin.png
+art: /images/music/vsegda-odin.png
 type: "single"
 hidden: true
 links:

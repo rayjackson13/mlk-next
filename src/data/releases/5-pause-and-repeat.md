@@ -2,7 +2,7 @@
 slug: "pause-and-repeat"
 date: "2021-12-26"
 title: "Pause & Repeat"
-art: ../../assets/img/music/pause-and-repeat.png
+art: /images/music/pause-and-repeat.png
 type: "single"
 links:
   - { service: "apple", url: "https://music.apple.com/us/album/pause-repeat-single/1697189115" }

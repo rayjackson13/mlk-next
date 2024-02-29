@@ -2,7 +2,7 @@
 slug: "who-caused-it"
 date: "2022-06-01"
 title: "Who Caused It"
-art: ../../assets/img/music/who-caused-it.png
+art: /images/music/who-caused-it.png
 type: "single"
 links:
   - { service: "apple", url: "https://music.apple.com/us/album/who-caused-it-single/1697273183" }

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { StaticImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import React, {
   RefObject,
   useCallback,
@@ -8,15 +8,15 @@ import React, {
   useState,
 } from 'react';
 
-import * as styles from './Hero.module.scss';
+import styles from './Hero.module.scss';
 
+import Arrow from 'assets/img/arrow-down.svg';
+import HeroImage from 'assets/img/me.jpeg';
 import Logo from 'assets/svg/logo.svg';
 
 type Props = {
   nextSectionRef: RefObject<HTMLElement>;
 };
-
-const PHOTO_PATH = '../../assets/img/me.jpeg';
 
 export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
   const ref = useRef<HTMLElement>(null);
@@ -56,22 +56,22 @@ export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
       <div className={styles.content}>
         <div className={styles.about}>
           <div className={styles.imageContainer}>
-            <StaticImage
+            <Image
               alt="Ray 7ackson | Kostya"
               className={clsx(styles.aboutImg, styles.aboutImgCopy)}
-              src={PHOTO_PATH}
+              src={HeroImage}
               width={700}
             />
-            <StaticImage
+            <Image
               alt="Ray 7ackson | Kostya"
               className={styles.aboutImg}
-              src={PHOTO_PATH}
+              src={HeroImage}
               width={700}
             />
-            <StaticImage
+            <Image
               alt="Ray 7ackson | Kostya"
               className={clsx(styles.aboutImg, styles.aboutImgCopy)}
-              src={PHOTO_PATH}
+              src={HeroImage}
               width={700}
             />
           </div>
@@ -91,7 +91,7 @@ export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
             onClick={onContinueClick}
             type="button"
           >
-            <i className={styles.arrow} />
+            <Arrow className={styles.arrow} />
           </button>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import Image from 'next/image';
 import React, { forwardRef, useCallback } from 'react';
 
 import * as styles from './Release.module.scss';
@@ -16,8 +16,9 @@ type Props = {
 
 export const Release = forwardRef<HTMLElement, Props>(
   ({ album, hasBorder = true }, ref): JSX.Element | null => {
+    console.log(album);
     const title = getTranslation('newRelease');
-    const image = getImage(album.imageLarge);
+    // const image = getImage(album.imageLarge);
     const type = getTranslation(album.type);
 
     const renderLinks = useCallback((): JSX.Element[] | null => {
@@ -40,11 +41,13 @@ export const Release = forwardRef<HTMLElement, Props>(
           <div className={styles.wrap}>
             <div className={styles.grid}>
               <div className={styles.album}>
-                {image && (
-                  <GatsbyImage
+                {album.art && (
+                  <Image
                     alt="image"
                     className={styles.albumArt}
-                    image={image}
+                    height={500}
+                    src={album.art}
+                    width={500}
                   />
                 )}
               </div>

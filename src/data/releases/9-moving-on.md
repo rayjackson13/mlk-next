@@ -2,7 +2,7 @@
 slug: "moving-on"
 date: "2023-03-01"
 title: "Moving On"
-art: ../../assets/img/music/moving-on.png
+art: /images/music/moving-on.png
 type: "single"
 links:
   - { service: "apple", url: "https://music.apple.com/us/album/moving-on-single/1700302194" }

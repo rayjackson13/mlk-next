@@ -46,6 +46,7 @@ $shadow: 2px 4px 16px rgb(0 0 0 / 20%);
   position: relative;
   width: 75%;
   aspect-ratio: 1;
+  overflow: hidden;
 
   @include screen(sm) {
     width: 100%;

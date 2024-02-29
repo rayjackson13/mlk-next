@@ -2,7 +2,7 @@
 slug: "fine"
 date: "2020-07-17"
 title: "Fine"
-art: ../../assets/img/music/fine.png
+art: /images/music/fine.png
 type: "single"
 links:
   - { service: "apple", url: "https://music.apple.com/us/album/fine-feat-mislaidd-single/1697210670" }

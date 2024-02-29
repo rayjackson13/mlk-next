@@ -2,7 +2,7 @@
 slug: "rose-petals"
 date: "2022-08-26"
 title: "Rose Petals"
-art: ../../assets/img/music/rose-petals.png
+art: /images/music/rose-petals.png
 type: "single"
 links:
   - { service: "apple", url: "https://music.apple.com/album/rose-petals/1700286306?i=1700286308&l=en-GB" }

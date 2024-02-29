@@ -2,7 +2,7 @@
 slug: "wish-youd-have-me-back"
 date: "2021-04-24"
 title: "Wish You'd Have Me Back"
-art: ../../assets/img/music/wish-youd-have-me-back.png
+art: /images/music/wish-youd-have-me-back.png
 type: "single"
 links:
   - { service: "apple", url: "https://music.apple.com/us/album/wish-youd-have-me-back-single/1697187549" }

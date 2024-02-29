@@ -1,17 +1,5 @@
 @import "../../styles/functions";
 
-:root {
-  --hero-image-width: 80lvw;
-
-  @include screen(sm) {
-    --hero-image-width: 50lvh;
-  }
-
-  @include screen(xl) {
-    --hero-image-width: 60lvh;
-  }
-}
-
 @keyframes glow {
   0% {
     transform: scaleX(1) translateX(-105%);
@@ -67,7 +55,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   width: var(--hero-image-width);
 
   @include screen(xl) {
@@ -94,6 +82,7 @@
   box-shadow: 0 2px 4px rgb(0 0 0 / 25%);
   position: relative;
   width: var(--hero-image-width);
+  height: var(--hero-image-width);
 }
 
 .aboutImgCopy {
@@ -109,6 +98,7 @@
 .captionWrap {
   position: relative;
   overflow: hidden;
+  width: 100%;
 
   &::after {
     position: absolute;

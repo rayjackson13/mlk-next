@@ -2,7 +2,7 @@
 slug: "rooftops"
 date: "2022-10-10"
 title: "Rooftops"
-art: ../../assets/img/music/rooftops.png
+art: /images/music/rooftops.png
 type: "single"
 links:
   - { service: "apple", url: "https://music.apple.com/us/album/rooftops-single/1700303755?uo=4" }

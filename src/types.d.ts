@@ -1,6 +1,5 @@
 /* eslint-disable no-var */
 import { PageProps } from 'gatsby';
-import { FileNode } from 'gatsby-plugin-image/dist/src/components/hooks';
 
 export type StreamingLink = {
   service: 'apple' | 'spotify' | 'youtube' | 'deezer' | 'soundcloud';
@@ -8,10 +7,10 @@ export type StreamingLink = {
 };
 
 export type Album = {
+  art: string;
   date: string;
+  hidden: boolean;
   id: string;
-  imageLarge: FileNode;
-  imageSmall: FileNode;
   links: StreamingLink[];
   slug: string;
   title: string;

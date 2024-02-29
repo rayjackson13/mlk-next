@@ -2,7 +2,7 @@
 slug: "who-i-am"
 date: "2023-08-01"
 title: "Who I Am"
-art: ../../assets/img/music/who-i-am.png
+art: /images/music/who-i-am.png
 type: "single"
 links:
   - { service: "apple", url: "https://music.apple.com/album/who-i-am/1697286408?i=1697286409&l=en-GB" }

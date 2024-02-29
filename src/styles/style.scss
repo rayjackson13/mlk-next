@@ -40,6 +40,14 @@
     --font-brand: 'Rubik Glitch';
     --font-secondary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-primary: Gilroy, 'sans-serif';
+
+    --hero-image-width: 80lvw;
+    @include screen(sm) {
+        --hero-image-width: 50lvh;
+    }
+    @include screen(xl) {
+        --hero-image-width: 60lvh;
+    }
 }
 
 body {
