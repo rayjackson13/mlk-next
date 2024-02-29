@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import * as styles from './NotFound.module.scss';
+import styles from './NotFound.module.scss';
 
 import { getTranslation } from 'utils/helpers/getTranslation';
 

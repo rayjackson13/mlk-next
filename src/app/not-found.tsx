@@ -1,19 +1,7 @@
-'use client';
-
-import { useRouter } from 'next/navigation';
-import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
-
-import { getLocaleFromURI } from 'utils/helpers/getLocaleFromURI';
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
 
 export default function NotFoundPage(): JSX.Element {
-  const router = useRouter();
-  const pathname = usePathname();
-  const lang = getLocaleFromURI(pathname ?? '');
-
-  useEffect(() => {
-    router.replace(`/${lang}/404`);
-  }, [lang, router]);
-
-  return <main />;
+  const lang = headers().get('x-site-locale') ?? 'en';
+  redirect(`/${lang}/404`);
 }

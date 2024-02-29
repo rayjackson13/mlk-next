@@ -2,7 +2,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useCallback } from 'react';
 
-import * as styles from './StreamLink.module.scss';
+import styles from './StreamLink.module.scss';
 
 import { StreamingServices } from 'constants/streamServices';
 // import { Analytics, Events } from 'utils/analytics';
