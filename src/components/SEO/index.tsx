@@ -51,7 +51,7 @@ export default function SEO({
       <meta content={descText} property="twitter:description" />
       <meta content={imageURL} name="og:image" />
       <meta content={imageURL} name="twitter:image" />
-      <meta content="summary_large_image" property="twitter:card" />
+      <meta content="summary" property="twitter:card" />
       <meta content="website" name="og:type" />
       <meta content={currentPath} property="og:url" />
       {renderAlternateLinks()}
