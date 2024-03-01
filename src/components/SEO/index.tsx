@@ -40,81 +40,35 @@ export default function SEO({
     (): JSX.Element => (
       <>
         <link
-          href="/icon/apple-icon-57x57.png"
-          rel="apple-touch-icon"
-          sizes="57x57"
-        />
-        <link
-          href="/icon/apple-icon-60x60.png"
-          rel="apple-touch-icon"
-          sizes="60x60"
-        />
-        <link
-          href="/icon/apple-icon-72x72.png"
-          rel="apple-touch-icon"
-          sizes="72x72"
-        />
-        <link
-          href="/icon/apple-icon-76x76.png"
-          rel="apple-touch-icon"
-          sizes="76x76"
-        />
-        <link
-          href="/icon/apple-icon-114x114.png"
-          rel="apple-touch-icon"
-          sizes="114x114"
-        />
-        <link
-          href="/icon/apple-icon-120x120.png"
-          rel="apple-touch-icon"
-          sizes="120x120"
-        />
-        <link
-          href="/icon/apple-icon-144x144.png"
-          rel="apple-touch-icon"
-          sizes="144x144"
-        />
-        <link
-          href="/icon/apple-icon-152x152.png"
-          rel="apple-touch-icon"
-          sizes="152x152"
-        />
-        <link
-          href="/icon/apple-icon-180x180.png"
+          href="/icon/apple-touch-icon.png?v=1"
           rel="apple-touch-icon"
           sizes="180x180"
         />
         <link
-          href="/icon/android-icon-192x192.png"
-          rel="icon"
-          sizes="192x192"
-          type="image/png"
-        />
-        <link
-          href="/icon/favicon-32x32.png"
+          href="/icon/favicon-32x32.png?v=1"
           rel="icon"
           sizes="32x32"
           type="image/png"
         />
         <link
-          href="/icon/favicon-96x96.png"
-          rel="icon"
-          sizes="96x96"
-          type="image/png"
-        />
-        <link
-          href="/icon/favicon-16x16.png"
+          href="/icon/favicon-16x16.png?v=1"
           rel="icon"
           sizes="16x16"
           type="image/png"
         />
-        <link href="/manifest.json" rel="manifest" />
-        <meta content="#ffffff" name="msapplication-TileColor" />
-        <meta
-          content="/icon/ms-icon-144x144.png"
-          name="msapplication-TileImage"
+        <link href="/icon/site.webmanifest?v=1" rel="manifest" />
+        <link
+          color="#3f9ea3"
+          href="/icon/safari-pinned-tab.svg?v=1"
+          rel="mask-icon"
         />
-        <meta content="#ffffff" name="theme-color" />
+        <link href="/icon/favicon.ico?v=1" rel="shortcut icon" />
+        <meta content="#a8d3d5" name="msapplication-TileColor" />
+        <meta
+          content="/icon/browserconfig.xml?v=1"
+          name="msapplication-config"
+        />
+        <meta content="#a8d3d5" name="theme-color" />
       </>
     ),
     [],
