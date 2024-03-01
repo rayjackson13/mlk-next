@@ -1,6 +1,7 @@
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import clsx from 'clsx';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useCallback, useMemo, useState } from 'react';
 
@@ -11,19 +12,22 @@ import { useLocale } from 'utils/hooks/useLocale';
 
 type Props = {
   locale: string;
-  onSelect: (lang: string) => unknown;
+  onSelect: () => unknown;
+  path: string;
   preview: string;
 };
 
-const Option = ({ locale, onSelect, preview }: Props): JSX.Element => {
-  const onClick = (): unknown => onSelect(locale);
-
-  return (
-    <button className={styles.option} onClick={onClick} type="button">
-      {preview}
-    </button>
-  );
-};
+const Option = ({ locale, onSelect, path, preview }: Props): JSX.Element => (
+  <Link
+    className={styles.option}
+    href={path}
+    hrefLang={locale}
+    locale={locale}
+    onClick={onSelect}
+  >
+    {preview}
+  </Link>
+);
 
 export const LanguageSelect = (): JSX.Element => {
   const router = useRouter();
@@ -41,35 +45,18 @@ export const LanguageSelect = (): JSX.Element => {
 
   const toggleDropdown = useCallback(() => setOpen((open) => !open), []);
 
-  const changeLang = useCallback(
-    (locale: string): void => {
-      if (currentLocale === locale) return;
-
-      const { origin, href } = window.location;
-      const url = href.replace(origin, '').replace(currentLocale, locale);
-      router.push(url, url, { locale });
-    },
-    [currentLocale, router],
-  );
-
-  const onSelect = useCallback(
-    (locale: string): void => {
-      changeLang(locale);
-      close();
-    },
-    [changeLang, close],
-  );
-
   const renderOption = useCallback(
     ({ locale, preview }: Lang): JSX.Element => (
-      <Option
-        key={locale}
-        locale={locale}
-        onSelect={onSelect}
-        preview={preview}
-      />
+      <li key={locale}>
+        <Option
+          locale={locale}
+          onSelect={close}
+          path={router.asPath}
+          preview={preview}
+        />
+      </li>
     ),
-    [onSelect],
+    [close, router.asPath],
   );
 
   return (
@@ -85,9 +72,9 @@ export const LanguageSelect = (): JSX.Element => {
         </span>
       </button>
 
-      <div className={clsx(styles.dropdown, isOpen && styles.dropdownOpen)}>
+      <ul className={clsx(styles.dropdown, isOpen && styles.dropdownOpen)}>
         {Locales.map(renderOption)}
-      </div>
+      </ul>
     </div>
   );
 };
