@@ -36,6 +36,90 @@ export default function SEO({
     [baseURL, path],
   );
 
+  const renderIcons = useCallback(
+    (): JSX.Element => (
+      <>
+        <link
+          href="/icon/apple-icon-57x57.png"
+          rel="apple-touch-icon"
+          sizes="57x57"
+        />
+        <link
+          href="/icon/apple-icon-60x60.png"
+          rel="apple-touch-icon"
+          sizes="60x60"
+        />
+        <link
+          href="/icon/apple-icon-72x72.png"
+          rel="apple-touch-icon"
+          sizes="72x72"
+        />
+        <link
+          href="/icon/apple-icon-76x76.png"
+          rel="apple-touch-icon"
+          sizes="76x76"
+        />
+        <link
+          href="/icon/apple-icon-114x114.png"
+          rel="apple-touch-icon"
+          sizes="114x114"
+        />
+        <link
+          href="/icon/apple-icon-120x120.png"
+          rel="apple-touch-icon"
+          sizes="120x120"
+        />
+        <link
+          href="/icon/apple-icon-144x144.png"
+          rel="apple-touch-icon"
+          sizes="144x144"
+        />
+        <link
+          href="/icon/apple-icon-152x152.png"
+          rel="apple-touch-icon"
+          sizes="152x152"
+        />
+        <link
+          href="/icon/apple-icon-180x180.png"
+          rel="apple-touch-icon"
+          sizes="180x180"
+        />
+        <link
+          href="/icon/android-icon-192x192.png"
+          rel="icon"
+          sizes="192x192"
+          type="image/png"
+        />
+        <link
+          href="/icon/favicon-32x32.png"
+          rel="icon"
+          sizes="32x32"
+          type="image/png"
+        />
+        <link
+          href="/icon/favicon-96x96.png"
+          rel="icon"
+          sizes="96x96"
+          type="image/png"
+        />
+        <link
+          href="/icon/favicon-16x16.png"
+          rel="icon"
+          sizes="16x16"
+          type="image/png"
+        />
+        <link href="/manifest.json" rel="manifest" />
+        <meta content="#ffffff" name="msapplication-TileColor" />
+        <meta
+          content="/icon/ms-icon-144x144.png"
+          name="msapplication-TileImage"
+        />
+        <meta content="#ffffff" name="theme-color" />
+      </>
+    ),
+    [],
+  );
+
   const currentPath = useMemo(
     (): string => `${baseURL}/${lang}${path}`,
     [baseURL, lang, path],
@@ -49,6 +133,8 @@ export default function SEO({
       <meta content={descText} name="description" />
       <meta content={descText} name="og:description" />
       <meta content={descText} property="twitter:description" />
+      <link href="/favicon.ico" rel="icon" sizes="any" />
+      {renderIcons()}
       <meta content={imageURL} name="og:image" />
       <meta content={imageURL} name="twitter:image" />
       <meta content="summary" property="twitter:card" />
