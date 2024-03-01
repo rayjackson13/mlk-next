@@ -27,5 +27,8 @@ export async function middleware(req: NextRequest): Promise<unknown> {
     });
   }
 
-  return NextResponse.redirect(new URL(`/en${pathname}${search}`, req.url));
+  return NextResponse.redirect(
+    new URL(`/en${pathname}${search}`, req.url),
+    301,
+  );
 }
