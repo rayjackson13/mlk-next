@@ -42,7 +42,7 @@ export const Release = forwardRef<HTMLElement, Props>(
               <div className={styles.album}>
                 {album.art && (
                   <Image
-                    alt="image"
+                    alt={`${album.title} album art`}
                     className={styles.albumArt}
                     sizes="(max-width: 767px) 250px, (max-width: 1399px) 400px, 700px"
                     src={album.art}
