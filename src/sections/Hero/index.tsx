@@ -56,17 +56,17 @@ export const Hero = ({ nextSectionRef }: Props): JSX.Element => {
         <div className={styles.about}>
           <div className={styles.imageContainer}>
             <Image
-              alt="Ray 7ackson | Kostya"
+              alt="mellamokostya"
               className={clsx(styles.aboutImg, styles.aboutImgCopy)}
               src="/images/me.jpg"
             />
             <Image
-              alt="Ray 7ackson | Kostya"
+              alt="mellamokostya"
               className={styles.aboutImg}
               src="/images/me.jpg"
             />
             <Image
-              alt="Ray 7ackson | Kostya"
+              alt="mellamokostya"
               className={clsx(styles.aboutImg, styles.aboutImgCopy)}
               src="/images/me.jpg"
             />
