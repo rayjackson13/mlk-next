@@ -1,12 +1,12 @@
 import { GetStaticProps } from 'next';
-import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { useMemo, useRef } from 'react';
 
+import SEO from 'components/SEO';
 import { Discography } from 'sections/Discography';
 import { Hero } from 'sections/Hero';
 import { Release } from 'sections/Release';
 import { Album } from 'types';
-import { getTranslation } from 'utils/helpers/getTranslation';
 import { loadAllReleases } from 'utils/helpers/loadAllReleases';
 import { loadLocale } from 'utils/helpers/loadLocale';
 
@@ -15,22 +15,13 @@ type Props = {
 };
 
 const Home = ({ releases }: Props): JSX.Element => {
+  const { asPath: path } = useRouter();
   const sectionRef = useRef<HTMLElement>(null);
   const latestAlbum = useMemo(() => releases[0], [releases]);
-  const title = getTranslation('title');
-  const description = getTranslation('pageDescription');
 
   return (
     <>
-      <Head>
-        <title>{title}</title>
-        <meta content={description} name="description" />
-        <meta content={description} name="og:description" />
-        <meta content={title} name="og:title" />
-        <meta content="website" name="og:type" />
-        <meta content="/images/me.jpeg" name="og:image" />
-      </Head>
-
+      <SEO path={path} />
       <Hero nextSectionRef={sectionRef} />
       <Release album={latestAlbum} ref={sectionRef} />
       <Discography albums={releases} />

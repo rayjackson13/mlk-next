@@ -1,6 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import Head from 'next/head';
+import { useRouter } from 'next/router';
 
+import SEO from 'components/SEO';
 import { Locales } from 'constants/locales';
 import { Release } from 'sections/Release';
 import { Album } from 'types';
@@ -17,6 +18,7 @@ type Props = {
 };
 
 const ReleasePage = ({ release }: Props): JSX.Element => {
+  const { asPath: path } = useRouter();
   const pageTitle = `${release?.title} | MELLAMOKOSTYA`;
   const pageDesc = getTranslation('releasePageDesc').replace(
     '#',
@@ -25,14 +27,12 @@ const ReleasePage = ({ release }: Props): JSX.Element => {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-        <meta content={pageTitle} name="og:title" />
-        <meta content={pageDesc} name="description" />
-        <meta content={pageDesc} name="og:description" />
-        <meta content={release?.art} name="og:image" />
-        <meta content="website" name="og:type" />
-      </Head>
+      <SEO
+        description={pageDesc}
+        image={release?.art}
+        path={path}
+        title={pageTitle}
+      />
 
       {release && <Release album={release} hasBorder={false} />}
     </>
