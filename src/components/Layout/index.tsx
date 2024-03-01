@@ -9,6 +9,7 @@ import { Navbar } from 'components/Navbar';
 import { LocaleContext } from 'context/locale';
 import { Translations } from 'types';
 import { Analytics, Events } from 'utils/analytics';
+import { getTranslation } from 'utils/helpers/getTranslation';
 
 Analytics.init();
 
@@ -42,7 +43,7 @@ export const Layout = ({
           <Navbar locale={locale} path={path} />
           <Background />
           <main>
-            <h1 className="visuallyhidden">mellamokostya</h1>
+            <h1 className="visuallyhidden">{getTranslation('title')}</h1>
 
             {children}
           </main>
