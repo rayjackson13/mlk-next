@@ -15,13 +15,13 @@ type Props = {
 };
 
 const Home = ({ releases }: Props): JSX.Element => {
-  const { asPath: path } = useRouter();
+  const { asPath: path, locale } = useRouter();
   const sectionRef = useRef<HTMLElement>(null);
   const latestAlbum = useMemo(() => releases[0], [releases]);
 
   return (
     <>
-      <SEO path={path} />
+      <SEO lang={locale} path={path} />
       <Hero nextSectionRef={sectionRef} />
       <Release album={latestAlbum} ref={sectionRef} />
       <Discography albums={releases} />

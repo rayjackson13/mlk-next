@@ -18,7 +18,7 @@ type Props = {
 };
 
 const ReleasePage = ({ release }: Props): JSX.Element => {
-  const { asPath: path } = useRouter();
+  const { asPath: path, locale } = useRouter();
   const pageTitle = `${release?.title} | MELLAMOKOSTYA`;
   const pageDesc = getTranslation('releasePageDesc').replace(
     '#',
@@ -29,7 +29,8 @@ const ReleasePage = ({ release }: Props): JSX.Element => {
     <>
       <SEO
         description={pageDesc}
-        image={release?.art}
+        imagePath={release?.art}
+        lang={locale}
         path={path}
         title={pageTitle}
       />
