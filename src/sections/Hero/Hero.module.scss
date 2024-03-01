@@ -99,6 +99,8 @@
   position: relative;
   overflow: hidden;
   width: 100%;
+  margin: 0;
+  display: flex;
 
   &::after {
     position: absolute;
