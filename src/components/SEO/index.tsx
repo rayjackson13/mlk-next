@@ -126,22 +126,27 @@ export default function SEO({
   );
 
   return (
-    <Head>
-      <title>{titleText}</title>
-      <meta content={titleText} name="og:title" />
-      <meta content={titleText} property="twitter:title" />
-      <meta content={descText} name="description" />
-      <meta content={descText} name="og:description" />
-      <meta content={descText} property="twitter:description" />
-      <link href="/favicon.ico" rel="icon" sizes="any" />
-      {renderIcons()}
-      <meta content={imageURL} name="og:image" />
-      <meta content={imageURL} name="twitter:image" />
-      <meta content="summary" property="twitter:card" />
-      <meta content="website" name="og:type" />
-      <meta content={currentPath} property="og:url" />
-      {renderAlternateLinks()}
-      <meta content="e9f5bba3f5bb1649" name="yandex-verification" />
-    </Head>
+    <>
+      <Head>
+        <title>{titleText}</title>
+        <meta content={titleText} name="og:title" />
+        <meta content={titleText} property="twitter:title" />
+        <meta content={descText} name="description" />
+        <meta content={descText} name="og:description" />
+        <meta content={descText} property="twitter:description" />
+        <link href="/favicon.ico" rel="icon" sizes="any" />
+        {renderIcons()}
+        <meta content={imageURL} name="og:image" />
+        <meta content={imageURL} name="twitter:image" />
+        <meta content="summary" property="twitter:card" />
+        <meta content="website" name="og:type" />
+        <meta content={currentPath} property="og:url" />
+        {renderAlternateLinks()}
+        <meta content="e9f5bba3f5bb1649" name="yandex-verification" />
+      </Head>
+
+      <h1 className="visuallyhidden">{titleText}</h1>
+      <p className="visuallyhidden">{descText}</p>
+    </>
   );
 }

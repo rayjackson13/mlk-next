@@ -42,11 +42,7 @@ export const Layout = ({
         <>
           <Navbar locale={locale} path={path} />
           <Background />
-          <main>
-            <h1 className="visuallyhidden">{getTranslation('title')}</h1>
-
-            {children}
-          </main>
+          <main>{children}</main>
           <Footer />
         </>
       </LocaleContext.Provider>
