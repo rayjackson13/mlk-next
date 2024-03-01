@@ -22,7 +22,7 @@ export default function SEO({
   const titleText = title ?? getTranslation('title');
   const descText = description ?? getTranslation('pageDescription');
   const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
-  const image = imagePath ?? '/images/me.jpeg';
+  const image = imagePath ?? '/images/me.jpg';
   const imageURL = baseURL?.concat(image) ?? image;
 
   const renderAlternateLinks = useCallback(
