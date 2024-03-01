@@ -55,6 +55,7 @@ export default function SEO({
       <meta content="website" name="og:type" />
       <meta content={currentPath} property="og:url" />
       {renderAlternateLinks()}
+      <meta content="e9f5bba3f5bb1649" name="yandex-verification" />
     </Head>
   );
 }
