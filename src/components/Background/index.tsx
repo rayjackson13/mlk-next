@@ -9,7 +9,7 @@ export const Background = (): JSX.Element => (
     <Image
       alt=""
       className={styles.img}
-      sizes="(max-width: 767px) 700w, 1000px"
+      sizes="(max-width: 767px) 700px, 1000px"
       src="/images/me.jpg"
     />
     <div className={styles.gradient} />
