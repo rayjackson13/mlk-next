@@ -6,7 +6,7 @@ import styles from './StreamLink.module.scss';
 
 import { StreamingServices } from 'constants/streamServices';
 import { Analytics, Events } from 'utils/analytics';
-// import { Analytics, Events } from 'utils/analytics';
+import { getTranslation } from 'utils/helpers/getTranslation';
 
 type Variant = 'apple' | 'spotify' | 'youtube' | 'soundcloud' | 'deezer';
 
@@ -22,6 +22,9 @@ export const StreamLink = ({
   variant,
 }: Props): JSX.Element => {
   const { backgroundColor, color, name, icon } = StreamingServices[variant];
+  const label = getTranslation('releasePageStream')
+    .replace('$title', releaseName)
+    .replace('$service', name);
 
   const onClick = useCallback(() => {
     Analytics.track(Events.StreamClicked, {
@@ -33,6 +36,7 @@ export const StreamLink = ({
 
   return (
     <a
+      aria-label={label}
       className={styles.root}
       href={href}
       onClick={onClick}

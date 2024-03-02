@@ -17,18 +17,21 @@ type Props = {
 export const Release = forwardRef<HTMLElement, Props>(
   ({ album, hasBorder = true }, ref): JSX.Element | null => {
     const title = getTranslation('newRelease');
-    // const image = getImage(album.imageLarge);
     const type = getTranslation(album.type);
 
-    const renderLinks = useCallback((): JSX.Element[] | null => {
-      if (!album) return null;
-
-      return album.links.map(({ service, url }, index) => (
-        <li key={index}>
-          <StreamLink href={url} releaseName={album.title} variant={service} />
-        </li>
-      ));
-    }, [album]);
+    const renderLinks = useCallback(
+      (): JSX.Element[] | null =>
+        album.links.map(({ service, url }, index) => (
+          <li key={index}>
+            <StreamLink
+              href={url}
+              releaseName={album.title}
+              variant={service}
+            />
+          </li>
+        )),
+      [album],
+    );
 
     const rootStyle = clsx('section', !hasBorder && styles.noBorder);
 

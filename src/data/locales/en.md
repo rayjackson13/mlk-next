@@ -6,7 +6,9 @@ outNow: 'Out Now'
 discography: 'Discography'
 single: 'Single'
 rights: 'All rights reserved'
+socialLabel: Visit mellamokostya on $service
 releasePageDesc: Stream «#» - a new release by MELLAMOKOSTYA.
+releasePageStream: Stream «$title» on $service
 notFoundTitle: Oof, this page does not exist.
 notFoundDesc: "Redirecting to home page in #..."
 ---

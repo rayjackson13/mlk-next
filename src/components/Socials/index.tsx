@@ -7,7 +7,7 @@ import socialInfo from './social.json';
 
 import { LanguageSelect } from 'components/LanguageSelect';
 import { Analytics, Events } from 'utils/analytics';
-// import { Analytics, Events } from 'utils/analytics';
+import { getTranslation } from 'utils/helpers/getTranslation';
 
 type MediaLink = {
   icon: string;
@@ -26,11 +26,12 @@ const SocialItem = ({ link }: ItemProps): JSX.Element => {
       url: link.url,
     });
   }, [link.name, link.url]);
+  const label = getTranslation('socialLabel').replace('$service', link.name);
 
   return (
     <li>
       <a
-        aria-label={link.name}
+        aria-label={label}
         className={styles.link}
         href={link.url}
         onClick={onClick}
