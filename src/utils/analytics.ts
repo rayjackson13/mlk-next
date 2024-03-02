@@ -25,7 +25,7 @@ export class Analytics {
     properties: Dict,
   ): Promise<void> => {
     try {
-      axios.post('/api/usage', {
+      axios.post('/api/usage/', {
         data: {
           name,
           properties,

@@ -14,7 +14,7 @@ type Params = {
 };
 
 type Props = {
-  release: Album | undefined;
+  release: Album | null;
 };
 
 const ReleasePage = ({ release }: Props): JSX.Element => {
@@ -24,6 +24,10 @@ const ReleasePage = ({ release }: Props): JSX.Element => {
     '#',
     release?.title ?? '',
   );
+
+  if (!release) {
+    return <></>;
+  }
 
   return (
     <>
@@ -35,7 +39,7 @@ const ReleasePage = ({ release }: Props): JSX.Element => {
         title={pageTitle}
       />
 
-      {release && <Release album={release} hasBorder={false} />}
+      <Release album={release} hasBorder={false} />
     </>
   );
 };
@@ -53,7 +57,7 @@ export const getStaticPaths: GetStaticPaths = () => {
     })),
   ).flat();
 
-  return { paths, fallback: true };
+  return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps<Props, Params> = ({
@@ -64,12 +68,13 @@ export const getStaticProps: GetStaticProps<Props, Params> = ({
   const releases = loadAllReleases();
   const translations = loadLocale(lang);
 
-  if (!params) return { props: { lang, release: undefined, translations } };
+  const release =
+    (params && releases.find((val) => val.slug === params.slug)) ?? null;
 
   return {
     props: {
       lang,
-      release: releases.find((val) => val.slug === params.slug),
+      release,
       translations,
     },
   };

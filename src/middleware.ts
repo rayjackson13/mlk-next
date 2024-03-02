@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 const PUBLIC_FILE = /\.(.*)$/;
 
 export async function middleware(req: NextRequest): Promise<unknown> {
-  const { pathname, locale, search } = req.nextUrl;
+  const { pathname, locale } = req.nextUrl;
 
   if (pathname.startsWith('/_next') || pathname.includes('/api/')) {
     return;
@@ -26,9 +26,4 @@ export async function middleware(req: NextRequest): Promise<unknown> {
       },
     });
   }
-
-  return NextResponse.redirect(
-    new URL(`/en${pathname}${search}`, req.url),
-    301,
-  );
 }
