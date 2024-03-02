@@ -16,10 +16,8 @@ export const NotFound = ({ countdown }: Props): JSX.Element => {
 
   return (
     <div className={clsx('section', styles.root)}>
-      <div className={styles.wrap}>
-        <h2 className={styles.text}>{title}</h2>
-        <p className={styles.text}>{desc}</p>
-      </div>
+      <h2 className={styles.text}>{title}</h2>
+      <p className={styles.text}>{desc}</p>
     </div>
   );
 };

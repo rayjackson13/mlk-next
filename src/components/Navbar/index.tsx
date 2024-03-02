@@ -9,11 +9,10 @@ import { Socials } from 'components/Socials';
 import { isIndexPage } from 'utils/helpers/isIndexPage';
 
 type Props = {
-  locale: string;
   path: string;
 };
 
-export const Navbar = ({ locale, path }: Props): JSX.Element => {
+export const Navbar = ({ path }: Props): JSX.Element => {
   const ref = useRef<HTMLElement>(null);
   const isIndex = isIndexPage(path);
 
@@ -65,7 +64,7 @@ export const Navbar = ({ locale, path }: Props): JSX.Element => {
           <Link
             aria-label="Go to homepage"
             className={clsx('brand', styles.logo)}
-            href={`/${locale}/`}
+            href="/"
           >
             <Logo />
           </Link>

@@ -1,20 +1,7 @@
 @import "../../styles/functions";
 
 .root {
-  min-height: 100svh;
-  margin-bottom: calc(var(--footer-height) * -1);
-  margin-top: calc(var(--header-height) * -1);
   border: 0;
-  display: flex;
-  flex-direction: column;
-  padding-top: var(--header-height);
-  padding-bottom: var(--footer-height);
-  justify-content: center;
-  align-items: center;
-}
-
-.wrap {
-  padding-bottom: var(--header-height);
 }
 
 .text {

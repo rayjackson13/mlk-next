@@ -9,7 +9,6 @@ import { Navbar } from 'components/Navbar';
 import { LocaleContext } from 'context/locale';
 import { Translations } from 'types';
 import { Analytics, Events } from 'utils/analytics';
-import { getTranslation } from 'utils/helpers/getTranslation';
 
 Analytics.init();
 
@@ -40,7 +39,7 @@ export const Layout = ({
     <>
       <LocaleContext.Provider value={lang}>
         <>
-          <Navbar locale={locale} path={path} />
+          <Navbar path={path} />
           <Background />
           <main>{children}</main>
           <Footer />
