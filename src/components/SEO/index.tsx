@@ -68,7 +68,7 @@ export default function SEO({
           content="/icon/browserconfig.xml?v=1"
           name="msapplication-config"
         />
-        <meta content="#a8d3d5" name="theme-color" />
+        <meta content="#2e2e2e" name="theme-color" />
       </>
     ),
     [],
