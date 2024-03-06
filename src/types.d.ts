@@ -1,7 +1,15 @@
 /* eslint-disable no-var */
 
+type StreamServiceVariant =
+  | 'apple'
+  | 'spotify'
+  | 'youtube'
+  | 'soundcloud'
+  | 'deezer'
+  | 'yandex';
+
 export type StreamingLink = {
-  service: 'apple' | 'spotify' | 'youtube' | 'deezer' | 'soundcloud';
+  service: StreamServiceVariant;
   url: string;
 };
 

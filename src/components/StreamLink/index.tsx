@@ -2,6 +2,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useCallback } from 'react';
 
+import { StreamIcon } from './StreamIcon';
 import styles from './StreamLink.module.scss';
 
 import { StreamingServices } from 'constants/streamServices';
@@ -21,7 +22,7 @@ export const StreamLink = ({
   releaseName,
   variant,
 }: Props): JSX.Element => {
-  const { backgroundColor, color, name, icon } = StreamingServices[variant];
+  const { backgroundColor, color, name } = StreamingServices[variant] ?? {};
   const label = getTranslation('releasePageStream')
     .replace('$title', releaseName)
     .replace('$service', name);
@@ -44,7 +45,7 @@ export const StreamLink = ({
       target="_blank"
     >
       <span className={styles.icon} style={{ backgroundColor, color }}>
-        <FontAwesomeIcon fixedWidth icon={icon} />
+        <StreamIcon service={variant} />
       </span>
 
       <span className={styles.title}>{name}</span>
