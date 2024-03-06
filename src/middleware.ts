@@ -17,6 +17,14 @@ export async function middleware(req: NextRequest): Promise<unknown> {
     });
   }
 
+  console.log(pathname, locale);
+
+  if (pathname === '/' && locale === 'default') {
+    const url = req.nextUrl.clone();
+    url.locale = 'en';
+    return NextResponse.redirect(url, 301);
+  }
+
   if (locale !== 'default') {
     const headers = new Headers(req.headers);
     headers.set('x-site-locale', locale);
