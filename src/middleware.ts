@@ -17,8 +17,6 @@ export async function middleware(req: NextRequest): Promise<unknown> {
     });
   }
 
-  console.log(pathname, locale);
-
   if (pathname === '/' && locale === 'default') {
     const url = req.nextUrl.clone();
     url.locale = 'en';
