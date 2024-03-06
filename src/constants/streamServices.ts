@@ -37,6 +37,6 @@ export const StreamingServices: ServicesType = {
   yandex: {
     backgroundColor: '#000000',
     color: '#FFBC0D',
-    name: 'Яндекс.Музыка',
+    name: 'Яндекс Музыка',
   },
 };
