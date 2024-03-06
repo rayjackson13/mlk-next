@@ -6,15 +6,14 @@ import { StreamIcon } from './StreamIcon';
 import styles from './StreamLink.module.scss';
 
 import { StreamingServices } from 'constants/streamServices';
+import { StreamServiceVariant } from 'types';
 import { Analytics, Events } from 'utils/analytics';
 import { getTranslation } from 'utils/helpers/getTranslation';
-
-type Variant = 'apple' | 'spotify' | 'youtube' | 'soundcloud' | 'deezer';
 
 type Props = {
   href: string;
   releaseName: string;
-  variant: Variant;
+  variant: StreamServiceVariant;
 };
 
 export const StreamLink = ({
