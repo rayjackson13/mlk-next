@@ -39,4 +39,9 @@ export const StreamingServices: ServicesType = {
     color: '#FFBC0D',
     name: 'Яндекс Музыка',
   },
+  vkmusic: {
+    backgroundColor: '#000',
+    color: '#fff',
+    name: 'VK Музыка',
+  },
 };

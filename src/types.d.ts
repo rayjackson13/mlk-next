@@ -6,7 +6,8 @@ type StreamServiceVariant =
   | 'youtube'
   | 'soundcloud'
   | 'deezer'
-  | 'yandex';
+  | 'yandex'
+  | 'vkmusic';
 
 export type StreamingLink = {
   service: StreamServiceVariant;

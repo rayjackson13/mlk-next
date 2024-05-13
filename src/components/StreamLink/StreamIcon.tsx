@@ -4,6 +4,7 @@ import {
   faSoundcloud,
   faSpotify,
   faYoutube,
+  faVk,
 } from '@fortawesome/free-brands-svg-icons';
 import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 
@@ -22,6 +23,7 @@ const IconMap: { [x in StreamServiceVariant | 'default']: JSX.Element } = {
   deezer: <FAIcon name={faDeezer} />,
   soundcloud: <FAIcon name={faSoundcloud} />,
   yandex: <YaMusicIcon className="svg-inline--fa fa-fw" />,
+  vkmusic: <FAIcon name={faVk} />,
   default: <FAIcon name={faQuestion} />,
 };
 
