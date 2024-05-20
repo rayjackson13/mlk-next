@@ -1,5 +1,5 @@
 ---
-slug: "pustota"
+slug: "leto"
 date: "2024-05-01"
 title: "Лето"
 art: /images/music/leto.png
