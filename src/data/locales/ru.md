@@ -5,6 +5,7 @@ newRelease: 'Новый релиз'
 outNow: 'Уже в сети'
 discography: 'Дискография'
 single: 'Сингл'
+album: 'Альбом'
 rights: 'Все права защищены'
 socialLabel: Открыть страницу mellamokostya в $service
 releasePageDesc: Оцени «#» - новый релиз от MELLAMOKOSTYA.

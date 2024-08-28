@@ -4,6 +4,7 @@ pageDescription: 'Listen to the latest music from MELLAMOKOSTYA.'
 newRelease: 'New release'
 outNow: 'Out Now'
 discography: 'Discography'
+album: 'Album'
 single: 'Single'
 rights: 'All rights reserved'
 socialLabel: Visit mellamokostya on $service
