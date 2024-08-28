@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/optimiseImages.mjs && next build",
     "start": "next dev",
     "serve": "next start",
     "lint": "next lint",
