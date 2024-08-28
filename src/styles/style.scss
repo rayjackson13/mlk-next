@@ -75,6 +75,10 @@ a {
     text-decoration: none;
 }
 
+main {
+    min-height: calc(100svh - var(--header-height) - 80px);
+}
+
 .container {
     width: 100%;
     margin-right: auto;
@@ -140,10 +144,6 @@ a {
 
     @include screen(lg) {
         margin-bottom: 4rem;
-    }
-
-    @include screen(xl) {
-        font-size: 64px;
     }
 }
 

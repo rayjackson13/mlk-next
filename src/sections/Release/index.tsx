@@ -1,13 +1,12 @@
 import clsx from 'clsx';
-import React, { forwardRef, useCallback } from 'react';
+import React, { forwardRef } from 'react';
 
 import styles from './Release.module.scss';
+import { AlbumArt } from './components/AlbumArt';
+import { AlbumInfo } from './components/AlbumInfo';
 
-import { Image } from 'components/Image';
-import { StreamLink } from 'components/StreamLink';
 import { Album } from 'types';
 import { getTranslation } from 'utils/helpers/getTranslation';
-import { getYear } from 'utils/helpers/getYear';
 
 type Props = {
   album: Album;
@@ -17,22 +16,6 @@ type Props = {
 export const Release = forwardRef<HTMLElement, Props>(
   ({ album, hasBorder = true }, ref): JSX.Element | null => {
     const title = getTranslation('newRelease');
-    const type = getTranslation(album.type);
-
-    const renderLinks = useCallback(
-      (): JSX.Element[] | null =>
-        album.links.map(({ service, url }, index) => (
-          <li key={index}>
-            <StreamLink
-              href={url}
-              releaseName={album.title}
-              variant={service}
-            />
-          </li>
-        )),
-      [album],
-    );
-
     const rootStyle = clsx('section', !hasBorder && styles.noBorder);
 
     return (
@@ -42,27 +25,9 @@ export const Release = forwardRef<HTMLElement, Props>(
 
           <div className={styles.wrap}>
             <div className={styles.grid}>
-              <div className={styles.album}>
-                {album.art && (
-                  <Image
-                    alt={`${album.title} album art`}
-                    className={styles.albumArt}
-                    sizes="(max-width: 767px) 250px, (max-width: 1399px) 400px, 700px"
-                    src={album.art}
-                  />
-                )}
-              </div>
+              <AlbumArt src={album.art} title={album.title} />
 
-              <div className={styles.right}>
-                <div className={styles.summary}>
-                  <p className={styles.desc}>{album?.title}</p>
-                  <p className={styles.date}>
-                    {type} • {getYear(album.date)}
-                  </p>
-                </div>
-
-                <ul className={styles.links}>{renderLinks()}</ul>
-              </div>
+              <AlbumInfo album={album} />
             </div>
           </div>
         </div>

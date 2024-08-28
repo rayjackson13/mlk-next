@@ -12,15 +12,6 @@
   transition: background-color 200ms;
   padding: .25rem;
 
-  @include screen(md) {
-    background-color: var(--grayscale-dark2x);
-    padding: 0;
-  }
-
-  @include screen(xl) {
-    height: 5rem;
-  }
-
   &:hover {
     background-color: var(--grayscale-dark1x);
   }
@@ -38,27 +29,17 @@
   justify-content: center;
   align-items: center;
   border-radius: .875rem;
-
-  @include screen(md) {
-    border-radius: 0;
-    font-size: 2rem;
-  }
-
-  @include screen(xl) {
-    font-size: 3rem;
-  }
 }
 
 .title {
   padding: 0 1rem;
   font-size: 1rem;
-  font-weight: 500;
   flex: 1;
 
   @include screen(sm) {
     padding-left: 1rem;
     padding-right: 1rem;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 }
 
